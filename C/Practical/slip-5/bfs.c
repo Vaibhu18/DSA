@@ -54,8 +54,13 @@ void main()
         {0, 0, 0, 0, 1, 0, 0},
         {0, 0, 0, 0, 1, 0, 0}};
 
-    int src = 1;
-    int visited[7] = {0};
+    int graph[4][4] = {
+        {0, 1, 0, 1},
+        {1, 0, 0, 1},
+        {1, 0, 0, 0},
+        {1, 1, 1, 0}};
+    int src = 0;
+    int visited[4] = {0};
 
     printf("%d ", src);
     visited[src] = 1;
@@ -64,9 +69,9 @@ void main()
     while (!isEmpty(&queue))
     {
         int peek = deQ(&queue);
-        for (int i = 0; i < 7; i++)
+        for (int i = 0; i < 4; i++)
         {
-            if (arr[peek][i] == 1 && visited[i] == 0)
+            if (graph[peek][i] == 1 && visited[i] == 0)
             {
                 visited[i] = 1;
                 enQ(&queue, i);
@@ -74,9 +79,4 @@ void main()
             }
         }
     }
-
-    // enQ(&queue, 10);
-    // printf("%d %d\n", queue.arr[queue.start], queue.end);
-    // // printf("removed %d\n", deQ(&queue));
-    // printf("%d \n", isEmpty(&queue));
 }
