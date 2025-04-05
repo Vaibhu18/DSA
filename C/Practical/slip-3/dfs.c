@@ -1,10 +1,10 @@
 #include <stdio.h>
 
-int arr[5][5] = {{0, 0, 1, 1, 0},
-                 {0, 0, 1, 0, 1},
-                 {0, 1, 0, 0, 0},
-                 {0, 0, 0, 0, 1},
-                 {0, 0, 0, 0, 0}};
+int arr[5][5] = {{0, 1, 1, 0, 0}, // 0 connects to 2
+                 {1, 0, 0, 1, 0}, // 1 connects to 4
+                 {1, 0, 0, 0, 1}, // 2 connects to 0 and 3
+                 {0, 1, 0, 0, 1}, // 3 connects to 2 and 4
+                 {0, 0, 1, 1, 0}};
 int n = 5;
 int visited[5] = {0};
 

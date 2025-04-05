@@ -45,22 +45,15 @@ void main()
 {
     Q queue;
     initQ(&queue);
-    int arr[7][7] = {
-        {0, 1, 1, 1, 0, 0, 0},
-        {1, 0, 1, 0, 0, 0, 0},
-        {1, 1, 0, 1, 1, 0, 0},
-        {1, 0, 1, 0, 1, 0, 0},
-        {0, 0, 1, 1, 0, 1, 1},
-        {0, 0, 0, 0, 1, 0, 0},
-        {0, 0, 0, 0, 1, 0, 0}};
 
-    int graph[4][4] = {
-        {0, 1, 0, 1},
-        {1, 0, 0, 1},
-        {1, 0, 0, 0},
-        {1, 1, 1, 0}};
+    int graph[5][5] = {
+        {0, 1, 1, 0, 0},
+        {1, 0, 0, 1, 0},
+        {1, 0, 0, 0, 1},
+        {0, 1, 0, 0, 1},
+        {0, 0, 1, 1, 0}};
     int src = 0;
-    int visited[4] = {0};
+    int visited[5] = {0};
 
     printf("%d ", src);
     visited[src] = 1;
@@ -69,7 +62,7 @@ void main()
     while (!isEmpty(&queue))
     {
         int peek = deQ(&queue);
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 5; i++)
         {
             if (graph[peek][i] == 1 && visited[i] == 0)
             {
